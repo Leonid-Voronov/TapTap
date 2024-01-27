@@ -27,10 +27,16 @@ namespace Player
             _currentDirection = _gameConfig.StartDirection;
         }
 
+        public void SetDirection(Quaternion eulerRotation)
+        {
+            _currentDirection = eulerRotation * _currentDirection;
+        }
+
         public void Dispose()
         {
             _gameplayStarter.SceneStarted -= SetStartDirection;
         }
 
+        
     }
 }

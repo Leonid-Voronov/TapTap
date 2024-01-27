@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movePlayer: 1
   _speedMode: 0
-  _defaultSpeed: 15
-  _startDireciton: {x: 0, y: 0, z: 1}
+  _defaultSpeed: 5.89
+  _startDireciton: {x: 0, y: 0, z: -1}

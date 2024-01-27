@@ -500,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -5.05, y: 31.222, z: 41.67}
+  m_LocalPosition: {x: -2.37, y: 23.922, z: 41.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -637,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 1143543453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -5.05, y: 31.222, z: 41.67}
+  m_LocalPosition: {x: -2.37, y: 23.922, z: 41.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: -2.68, y: 26.47, z: 0}
+  m_FollowOffset: {x: 0, y: 19.17, z: 0}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffd81a04a92de14f9fb47c14afe851b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameConfigSO: {fileID: 11400000, guid: fe3522a9dcc84f24c947b1dedb574a54, type: 2}
   _playerPrefab: {fileID: 164390628652896947, guid: 2ca3df1ef7ad15440bfcb5b4395d460b, type: 3}
   _gameplayStarter: {fileID: 1778813274}
   _playerStartPoint: {fileID: 336697667}

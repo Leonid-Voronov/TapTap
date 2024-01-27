@@ -3,11 +3,16 @@ using Zenject;
 using Cinemachine;
 using Infrastructure;
 using Camera;
+using Player;
+using Config;
 
 namespace Ifrastructure
 {
     public class GameInstaller : MonoInstaller
     {
+        [Header("Scriptable objects")]
+        [SerializeField] private GameConfigSO _gameConfigSO;
+
         [Header ("Prefabs")] 
         [SerializeField] private GameObject _playerPrefab;
 
@@ -17,6 +22,7 @@ namespace Ifrastructure
         [SerializeField] private CinemachineVirtualCamera _playerVirtualCamera;
         public override void InstallBindings()
         {
+            InstallConfigBindings();
             InstallInfrastructureBindings();
             InstallCameraBindings();
             InstallPlayerBindings();
@@ -31,6 +37,13 @@ namespace Ifrastructure
 
         private void InstallPlayerBindings()
         {
+            Container.Bind<IOffsetCalculator>()
+                .To<PlayerOffsetCalculator>()
+                .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<PlayerDirection>()
+                .AsSingle();
+
             PlayerTag playerTag = Container.InstantiatePrefabForComponent<PlayerTag>(_playerPrefab, _playerStartPoint.position, Quaternion.identity, null);
 
             Container.Bind<PlayerTag>()
@@ -45,6 +58,13 @@ namespace Ifrastructure
                 .AsSingle();
 
             Container.BindInterfacesAndSelfTo<CameraInitializer>()
+                .AsSingle();
+        }
+
+        private void InstallConfigBindings()
+        {
+            Container.Bind<GameConfigSO>()
+                .FromInstance(_gameConfigSO)
                 .AsSingle();
         }
     }

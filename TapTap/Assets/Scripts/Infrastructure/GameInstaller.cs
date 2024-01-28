@@ -35,6 +35,7 @@ namespace Ifrastructure
             InstallCameraBindings();
             InstallUIBindings();
             InstallPlayerBindings();
+            InstallGameStateBindings();
         }
 
         private void InstallInfrastructureBindings()
@@ -65,6 +66,10 @@ namespace Ifrastructure
 
             Container.Bind<IJumper>()
                 .FromInstance(playerTag.Jumper)
+                .AsSingle();
+
+            Container.Bind<IDeathEventSender>()
+                .FromInstance(playerTag.GroundChecker)
                 .AsSingle();
         }
 
@@ -99,6 +104,12 @@ namespace Ifrastructure
         {
             Container.Bind<INextButtonGetter>()
                 .FromInstance(_actionButtonHolder)
+                .AsSingle();
+        }
+
+        private void InstallGameStateBindings()
+        {
+            Container.BindInterfacesAndSelfTo<SceneRestarter>()
                 .AsSingle();
         }
     }

@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _buttonTag: 0
-  ButtonTag: 0
 --- !u!1 &9125208374055441262
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ namespace Player
         private float _jumpTimer;
         private bool _jumping = false;
         
+        public bool IsJumping => _jumping;
+
         [Inject]
         public void Construct(GameConfigSO gameConfig)
         {

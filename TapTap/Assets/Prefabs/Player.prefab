@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 6317380220335044238}
+  _jumper: {fileID: 4963429573197730273}
 --- !u!114 &4963429573197730273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,38 +222,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34591e3d895058d43accca2cd05a644c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -0.0020141602
-      inSlope: 1.8980373
-      outSlope: 1.8980373
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.09419663
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: -0.025342569
-      outSlope: -0.025342569
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.99731445
-      value: -0.0020217896
-      inSlope: -2.2625096
-      outSlope: -2.2625096
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.05886354
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _jumpTime: 1.5
-  _jumpHeight: 300

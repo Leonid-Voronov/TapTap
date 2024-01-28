@@ -1,6 +1,4 @@
 using Config;
-using Input;
-using System;
 using UnityEngine;
 using Zenject;
 
@@ -9,20 +7,13 @@ namespace Player
     public class Jumper : MonoBehaviour, IJumper
     {
         private GameConfigSO _gameConfig;
-        private ITapReceiver _tapReceiver;
         private float _jumpTimer;
         private bool _jumping = false;
         
         [Inject]
-        public void Construct(ITapReceiver tapReceiver, GameConfigSO gameConfig)
+        public void Construct(GameConfigSO gameConfig)
         {
-            _tapReceiver = tapReceiver;
             _gameConfig = gameConfig;
-        }
-
-        private void OnEnable()
-        {
-            _tapReceiver.TapPressed += StartJump;
         }
 
         private void FixedUpdate()
@@ -44,14 +35,9 @@ namespace Player
             return _jumping ? _gameConfig.JumpCurve.Evaluate(_jumpTimer / _gameConfig.JumpTime) * _gameConfig.JumpHeight : 0f;
         }
 
-        private void StartJump(object sender, EventArgs e)
+        public void StartJump()
         {
             _jumping = true;
-        }
-
-        private void OnDisable()
-        {
-            _tapReceiver.TapPressed -= StartJump;
         }
     }
 }

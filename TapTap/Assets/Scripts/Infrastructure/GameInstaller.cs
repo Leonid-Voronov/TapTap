@@ -8,6 +8,7 @@ using Config;
 using UIInitialization;
 using UI;
 using Input;
+using Environment;
 
 namespace Ifrastructure
 {
@@ -21,6 +22,7 @@ namespace Ifrastructure
         [SerializeField] private GameObject _playerPrefab;
 
         [Header ("Scene dependencies")]
+        [SerializeField] private ActionButtonHolder _actionButtonHolder;
         [SerializeField] private AppStarter _appStarter;
         [SerializeField] private GameplayStarter _gameplayStarter;
         [SerializeField] private Transform _playerStartPoint;
@@ -29,6 +31,7 @@ namespace Ifrastructure
         {
             InstallConfigBindings();
             InstallInfrastructureBindings();
+            InstallEnvironmentBindings();
             InstallCameraBindings();
             InstallUIBindings();
             InstallPlayerBindings();
@@ -89,6 +92,13 @@ namespace Ifrastructure
 
             Container.Bind<ITapReceiver>()
                 .FromInstance(gameplayCanvas.TapReceiver)
+                .AsSingle();
+        }
+
+        private void InstallEnvironmentBindings()
+        {
+            Container.Bind<INextButtonGetter>()
+                .FromInstance(_actionButtonHolder)
                 .AsSingle();
         }
     }

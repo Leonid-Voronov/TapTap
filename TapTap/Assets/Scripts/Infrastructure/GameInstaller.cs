@@ -59,6 +59,10 @@ namespace Ifrastructure
             Container.Bind<PlayerTag>()
                 .FromInstance(playerTag)
                 .AsSingle();
+
+            Container.Bind<IJumper>()
+                .FromInstance(playerTag.Jumper)
+                .AsSingle();
         }
 
         private void InstallCameraBindings()

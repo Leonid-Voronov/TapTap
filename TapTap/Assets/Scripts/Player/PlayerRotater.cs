@@ -27,7 +27,7 @@ public class PlayerRotater : MonoBehaviour
 
     private void RotatePlayer(object sender, EventArgs e)
     {
-        _playerDirection.SetDirection(_leftRotation);
+        //_playerDirection.SetDirection(_leftRotation);
     }
 
     private void OnDisable()
